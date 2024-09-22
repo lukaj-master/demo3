@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: template.master.luka-j.rocks
+  - host: demo3.master.luka-j.rocks
     http:
       paths:
       - backend:
@@ -19,5 +19,5 @@ spec:
         pathType: Prefix
   tls:
   - hosts:
-    - template.master.luka-j.rocks
+    - demo3.master.luka-j.rocks
     secretName: template-tls-secret
