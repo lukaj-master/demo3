@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: template-deployment
+  labels:
+    app: template
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: template
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        app: template
+    spec:
+      containers:
+      - name: template
+        image: ghcr.io/luka-j/aspnet-template-app-app:sha-f80ab714afb6e100cada1fb8bef46d8df345444d
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          failureThreshold: 3
+          periodSeconds: 5
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          failureThreshold: 12
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          periodSeconds: 3
