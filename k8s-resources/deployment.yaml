@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: template
-        image: ghcr.io/luka-j/aspnet-template-app-app:sha-f80ab714afb6e100cada1fb8bef46d8df345444d
+        image: ghcr.io/lukaj-master/demo3-app:sha-6a0706bc4f57f5a4946b473f6816c966a34a4eae
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
