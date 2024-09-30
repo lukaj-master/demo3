@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: template
-        image: ghcr.io/lukaj-master/demo3-app:sha-6a0706bc4f57f5a4946b473f6816c966a34a4eae
+        image: ghcr.io/lukaj-master/demo3-app:sha-87482f4b19af1542293a29ae36eb2afdf5c6f000
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
